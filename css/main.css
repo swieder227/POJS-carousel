@@ -1,0 +1,108 @@
+/*
+
+Basic Carousel layout
+
+*/
+
+.carousel-main {
+    position: fixed;
+    border: 1px solid black;
+    width: 80%;
+    height: 45%;
+    top: 27.5%;
+    left: 10%;
+    overflow: hidden;
+    background-color: red;
+}
+
+.carousel-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0;
+}
+
+/* 
+
+Animating carousel-items
+
+*/
+
+.carousel-item.active,
+.carousel-item.prev,
+.carousel-item.next {
+    opacity: 1;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+}
+
+/* slide("_R") */
+@keyframes slideLeftOut {
+    0%   { transform: translateX(0%);}
+    100% { transform: translateX(-100%);}
+} 
+@keyframes slideRightIn {
+    0%   { transform: translateX(100%);}
+    100% { transform: translateX(0%);}
+} 
+
+.carousel-item.prev {
+    animation-name: slideLeftOut;
+}
+.carousel-item.active.next {
+    animation-name: slideRightIn;
+}
+
+/* slide("_L") */
+@keyframes slideRightOut {
+    0%   { transform: translateX(0%);}
+    100% { transform: translateX(100%);}
+} 
+@keyframes slideLeftIn {
+    0%   { transform: translateX(-100%);}
+    100% { transform: translateX(0%);}
+} 
+
+.carousel-item.prev.active {
+    animation-name: slideLeftIn;
+}
+.carousel-item.next {
+    animation-name: slideRightOut;
+}
+
+
+/* 
+
+Placeholders
+
+*/
+.carousel-item{
+    background-size: cover;
+}
+.carousel-item[data-slide-index="0"]{ background-image: url(http://lorempixel.com/800/800/technics/4/1); }
+.carousel-item[data-slide-index="1"]{ background-image: url(http://lorempixel.com/800/800/technics/5/2); }
+.carousel-item[data-slide-index="2"]{ background-image: url(http://lorempixel.com/800/800/technics/6/3); }
+.carousel-item[data-slide-index="3"]{ background-image: url(http://lorempixel.com/800/800/technics/7/4); }
+
+/*
+
+Buttons
+
+*/
+.carousel-btn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 3em;
+}
+
+.carousel-btn[data-dir="_L"] {
+    right: 0;
+}
+.carousel-btn[data-dir="_R"] {
+    left: 0;
+}
