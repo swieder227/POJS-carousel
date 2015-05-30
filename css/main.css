@@ -83,10 +83,10 @@ Placeholders
 .carousel-item{
     background-size: cover;
 }
-.carousel-item[data-slide-index="0"]{ background-image: url(http://lorempixel.com/800/800/technics/4/1); }
-.carousel-item[data-slide-index="1"]{ background-image: url(http://lorempixel.com/800/800/technics/5/2); }
-.carousel-item[data-slide-index="2"]{ background-image: url(http://lorempixel.com/800/800/technics/6/3); }
-.carousel-item[data-slide-index="3"]{ background-image: url(http://lorempixel.com/800/800/technics/7/4); }
+.carousel-item[data-slide-index="0"]{ background-image: url(../img/rooms_oceandouble.jpg); }
+.carousel-item[data-slide-index="1"]{ background-image: url(../img/rooms_oceanking.jpg); }
+.carousel-item[data-slide-index="2"]{ background-image: url(../img/rooms_pres.jpg); }
+.carousel-item[data-slide-index="3"]{ background-image: url(../img/rooms_serenity.jpg); }
 
 /*
 
@@ -98,11 +98,68 @@ Buttons
     top: 0;
     bottom: 0;
     width: 3em;
+    background: rgba(0,0,0,0.5);
+    outline: 0;
+    border: 0;
 }
 
 .carousel-btn[data-dir="_L"] {
-    right: 0;
+    left: 0;
 }
 .carousel-btn[data-dir="_R"] {
+    right: 0;
+}
+
+.carousel-btn[data-dir="_L"]:after,
+.carousel-btn[data-dir="_R"]:after {
+    content: '';
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    margin-top: -1em;
+    transform: rotate(45deg);
+}
+
+.carousel-btn[data-dir="_L"]:after {
+    border-left: 0.5em solid red;
+    border-bottom: 0.5em solid red;
+    left: 1em;
+}
+
+.carousel-btn[data-dir="_R"]:after {
+    border-right: 0.5em solid red;
+    border-top: 0.5em solid red;
+    right: 1em;
+}
+
+/*
+
+Dots
+
+*/
+.carousel-dots {
+    position: absolute;
+    bottom: 0;
     left: 0;
+    right: 0;
+    height: 2em;
+    text-align: center;
+}
+
+.carousel-dot {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background: black;
+    margin: 0 0.5em;
+    position: relative;
+    top: 0.5em;
+    transition: all 0.4s ease-out 0s;
+    transform: scale(1);
+}
+
+.carousel-dot.active {
+    background: red;
+    transform: scale(1.2);
 }
