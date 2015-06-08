@@ -222,7 +222,7 @@
 
     */
 
-    /* From Modernizr. Get supported event for CSS animation end */
+    /* From Modernizr. Get supported event for CSS animation animationEnd */
     whichAnimationEvent : function(){
       var t;
       var el = document.createElement('fakeelement');
