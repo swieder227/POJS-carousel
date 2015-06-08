@@ -5,15 +5,17 @@ Basic Carousel layout
 */
 
 .carousel-main {
-    position: fixed;
-    border: 1px solid black;
-    width: 80%;
-    height: 45%;
-    top: 27.5%;
-    left: 10%;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    bottom: 20%;
+    right: 20%;
     overflow: hidden;
     background-color: red;
 }
+/*.carousel-main.preventDoubleTap {
+    pointer-events:none;
+}*/
 
 .carousel-item {
     position: absolute;
